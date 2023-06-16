@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import Link from 'next/link';
 
-import Card from './card';
+import ListItem from './list-item';
 
 /**
  * @note [x: string]: any; is for passing list item props through
@@ -20,7 +20,7 @@ export default function LinkListItem({
 }: PropsWithChildren<LinkListItemProps>) {
   return (
     <Link href={href}>
-      <li {...props}>{children}</li>
+      <ListItem {...props}>{children}</ListItem>
     </Link>
   );
 }
