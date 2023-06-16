@@ -11,7 +11,7 @@ export default function Checkout({ params }: CheckoutProps) {
 
   return (
     <div>
-      Checkout page for {show.musician} at {show.location}
+      Checkout page for {show.musician} in {show.location}
     </div>
   );
 }
