@@ -1,3 +1,6 @@
+/**
+ * @note nice to have: add a venue name
+ */
 export type Show = {
   id: number;
   musician: string;
