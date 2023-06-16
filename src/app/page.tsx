@@ -1,9 +1,9 @@
-import { Card } from '@/components';
+import MainClient from './main-client';
 
 export default function Home() {
   return (
     <main className="min-w-20">
-      <Card className="p-8">hello!</Card>
+      <MainClient />
     </main>
   );
 }
