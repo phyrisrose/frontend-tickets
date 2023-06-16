@@ -2,7 +2,7 @@ import { Show } from './shows.types';
 
 export const shows: Show[] = [
   {
-    id: 23,
+    id: 0,
     musician: 'Youth Lagoon',
     date: new Date(2023, 5, 3),
     location: 'Fort Collins, CO',
@@ -10,7 +10,7 @@ export const shows: Show[] = [
     imageUrl: '/musicians/youth-lagoon.jpeg',
   },
   {
-    id: 45,
+    id: 1,
     musician: 'Nero',
     date: new Date(2023, 7, 6),
     location: 'Seattle, WA',
@@ -18,7 +18,7 @@ export const shows: Show[] = [
     imageUrl: '/musicians/nero.png',
   },
   {
-    id: 9,
+    id: 2,
     musician: 'Tycho',
     date: new Date(2023, 10, 14),
     location: 'Missoula, MT',
