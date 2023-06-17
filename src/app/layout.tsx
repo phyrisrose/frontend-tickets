@@ -3,6 +3,9 @@ import './globals.css';
 export const metadata = {
   title: 'Tickets',
   description: 'Tickets to your favorite shows',
+  icons: {
+    icon: '/headphones.jpg',
+  },
 };
 
 export default function RootLayout({
