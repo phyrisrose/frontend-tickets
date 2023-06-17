@@ -7,5 +7,5 @@ export type Show = {
   date: Date;
   location: string;
   price: number;
-  imageUrl?: string;
+  imageUrl: string;
 };
