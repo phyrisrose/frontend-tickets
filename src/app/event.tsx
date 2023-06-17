@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 import Image from 'next/image';
 import { Show } from './shows.types';
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
@@ -6,9 +8,6 @@ interface EventProps {
   show: Show;
 }
 
-/**
- * @todo format date
- */
 export default function Event({ show }: EventProps) {
   return (
     <div className="flex gap-12 items-center justify-between">
@@ -21,7 +20,7 @@ export default function Event({ show }: EventProps) {
           width={40}
         />
         <div>
-          <div>{show.date.getFullYear()}</div>
+          <div>{format(show.date, 'MMMM do, yyyy')}</div>
           <div>{show.musician}</div>
           <div>{show.location}</div>
         </div>
