@@ -14,7 +14,7 @@ export default function Event({ show }: EventProps) {
     <div className="flex gap-12 items-center justify-between">
       <div className="flex gap-4">
         <Image
-          className="h-20 w-20 rounded-full object-cover border-2 border-slate-200"
+          className="h-20 w-20 rounded-full object-cover border-2 border-slate-100"
           src={show.imageUrl}
           alt="show-avatar"
           height={40}
@@ -30,7 +30,7 @@ export default function Event({ show }: EventProps) {
         <ArrowLongRightIcon
           className={[
             'fill-current',
-            'text-gray-500',
+            'text-slate-500',
             'inline',
             'invisible',
             'group-hover/item:visible',
