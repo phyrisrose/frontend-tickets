@@ -6,7 +6,7 @@ import Event from './event';
 
 export default function MainClient() {
   return (
-    <Card className="p-8">
+    <Card className="p-8 min-w-40">
       <List>
         {shows.map((show, index) => (
           <LinkListItem key={index} href={`/checkout/${show.id}`}>
