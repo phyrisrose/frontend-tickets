@@ -6,5 +6,5 @@ import { Card } from '@/components';
  * (you can add some fake fees)
  */
 export default function CheckoutSummaryCard() {
-  return <Card className="col-span-1 p-4">Summary</Card>;
+  return <Card className="col-span-1 row-span-2 p-4">Summary</Card>;
 }

@@ -1,6 +1,7 @@
 import { shows } from '@/app/shows-data';
 import PaymentCard from './payment-card';
 import CheckoutSummaryCard from './checkout-summary-card';
+import ShowSummaryCard from './show-summary-card';
 
 interface CheckoutProps {
   params: {
@@ -14,8 +15,9 @@ export default function Checkout({ params }: CheckoutProps) {
 
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
-      <PaymentCard />
+      <ShowSummaryCard show={show} />
       <CheckoutSummaryCard />
+      <PaymentCard />
     </div>
   );
 }

@@ -6,12 +6,12 @@ import { Card } from '@/components';
 export default function PaymentCard() {
   return (
     <Card className="col-span-2 p-4">
-      <h1 className="text-xl font-semibold text-gray-700">Payment</h1>
+      <h1 className="text-xl font-semibold text-slate-700">Payment</h1>
       <div className="">
         <div className="my-3">
           <input
             type="text"
-            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-gray-400 text-gray-700 focus:ring focus:outline-none"
+            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             placeholder="Cardholder name"
             maxLength={22}
           />
@@ -19,20 +19,20 @@ export default function PaymentCard() {
         <div className="my-3">
           <input
             type="text"
-            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-gray-400 text-gray-700 focus:ring focus:outline-none"
+            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             placeholder="Card number"
             maxLength={19}
           />
         </div>
         <div className="my-3 flex flex-col">
           <div className="mb-2">
-            <label className="text-gray-700 pl-1">Expiration</label>
+            <label className="text-slate-700 pl-1">Expiration</label>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             <select
               name=""
               id=""
-              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-gray-400 text-gray-700 focus:ring focus:outline-none"
+              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             >
               <option value="" selected disabled>
                 MM
@@ -53,7 +53,7 @@ export default function PaymentCard() {
             <select
               name=""
               id=""
-              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-gray-400 text-gray-700 focus:ring focus:outline-none"
+              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             >
               <option value="" selected disabled>
                 YYYY
@@ -69,7 +69,7 @@ export default function PaymentCard() {
             </select>
             <input
               type="text"
-              className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-gray-400 text-gray-700 focus:ring focus:outline-none"
+              className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
               placeholder="Security code"
               maxLength={3}
             />
