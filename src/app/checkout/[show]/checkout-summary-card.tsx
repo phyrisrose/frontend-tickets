@@ -37,12 +37,14 @@ export default function CheckoutSummaryCard({
               </span>
             </div>
             <div className="flex justify-between items-baseline sm:block">
-              <label htmlFor="numTickets">Number of tickets: </label>
+              <label htmlFor="numTickets" className="mr-4">
+                Number of tickets:{' '}
+              </label>
               <select
                 value={numTickets}
                 name="numTickets"
                 onChange={handleSelect}
-                className="appearance-none block px-5 py-2 my-2 ml-4 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none text-right sm:text-left"
+                className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none text-right sm:text-left"
               >
                 <option value={1}>1</option>
                 <option value={2}>2</option>
