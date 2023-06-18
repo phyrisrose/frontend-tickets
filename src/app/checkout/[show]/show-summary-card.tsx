@@ -8,11 +8,17 @@ interface ShowSummaryCardProps {
 
 export default function ShowSummaryCard({ show }: ShowSummaryCardProps) {
   return (
-    <Card className="col-span-2 p-6">
-      <h1 className="text-xl font-semibold text-slate-700">You are going to</h1>
-      <div>{show.musician}</div>
-      <div>{show.location}</div>
-      {format(show.date, 'MMMM do, yyyy')}
+    <Card className="col-span-2 p-6 divide-y">
+      <h1 className="text-xl font-extrabold text-slate-700">Show details</h1>
+      <div className="mt-2 pt-2">
+        <div className="text-lg font-bold">{show.musician}</div>
+        <div className="text-md text-slate-800">
+          {show.venue} &bull; {show.location}
+        </div>
+        <div className=" text-slate-600 font-light">
+          {format(show.date, 'MMMM do, yyyy')}
+        </div>
+      </div>
     </Card>
   );
 }
