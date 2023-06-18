@@ -5,7 +5,7 @@ import { Card } from '@/components';
  */
 export default function PaymentCard() {
   return (
-    <Card className="col-span-2 p-4">
+    <Card className="col-span-2 p-4 order-3 sm:order-2">
       <h1 className="text-xl font-extrabold text-slate-700">Payment</h1>
       <div className="">
         <div className="my-3">

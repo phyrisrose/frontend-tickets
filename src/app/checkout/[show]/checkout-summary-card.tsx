@@ -7,7 +7,7 @@ import { Card } from '@/components';
  */
 export default function CheckoutSummaryCard() {
   return (
-    <Card className="col-span-1 row-span-2 p-4 divide-y">
+    <Card className="col-span-1 row-span-2 p-4 divide-y order-last sm:order-2 w-full">
       <h1 className="text-xl font-extrabold text-slate-700">Summary</h1>
       <div className="mt-2 pt-2"></div>
     </Card>
