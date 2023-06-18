@@ -6,6 +6,7 @@ export type Show = {
   musician: string;
   date: Date;
   location: string;
+  venue: string;
   price: number;
   imageUrl: string;
 };
