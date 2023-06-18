@@ -1,6 +1,6 @@
 ## Project overview
 
-This is a simple portal for buying tickets to a show. The user lands on a page with a list of shows by location, and is able to select a show, and navigate to the checkout page. The checkout page shows a responsive layout of a few cards: the show summary, payment method, and pricing + being able to select the number of tickets.
+This is a prototype for a simple portal for buying tickets to a show. The user lands on a page with a list of shows by location, and is able to select a show, and navigate to the checkout page. The checkout page shows a responsive layout of a few cards: the show summary, payment method, and pricing + being able to select the number of tickets.
 
 ## Getting started
 
