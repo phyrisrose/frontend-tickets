@@ -20,9 +20,11 @@ export default function Event({ show }: EventProps) {
           width={40}
         />
         <div>
-          <div>{format(show.date, 'MMMM do, yyyy')}</div>
-          <div>{show.musician}</div>
-          <div>{show.venue}</div>
+          <div className="uppercase text-xs text-slate-600 font-semibold tracking-tight">
+            {format(show.date, 'MMMM do, yyyy')}
+          </div>
+          <div className="text-lg font-bold">{show.musician}</div>
+          <div className="text-md text-pink-800 mt-1">{show.venue}</div>
         </div>
       </div>
       <div className="w-200 shrink-0">
