@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { shows } from '@/app/shows-data';
 import PaymentCard from './payment-card';
 import CheckoutSummaryCard from './checkout-summary-card';
@@ -11,11 +12,14 @@ interface CheckoutProps {
 
 export default function Checkout({ params }: CheckoutProps) {
   const show = shows[params.show];
+  if (!show) {
+    notFound();
+  }
 
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
       <ShowSummaryCard show={show} />
-      <CheckoutSummaryCard />
+      <CheckoutSummaryCard price={show.price} />
       <PaymentCard />
       <div className="col-span-1 sm:col-span-3 order-4 flex justify-center sm:justify-end">
         <button
