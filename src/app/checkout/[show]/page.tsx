@@ -11,13 +11,20 @@ interface CheckoutProps {
 
 export default function Checkout({ params }: CheckoutProps) {
   const show = shows[params.show];
-  // Checkout page for {show.musician} in {show.location}
 
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
       <ShowSummaryCard show={show} />
       <CheckoutSummaryCard />
       <PaymentCard />
+      <div className="col-span-1 sm:col-span-3 order-4 flex justify-center sm:justify-end">
+        <button
+          type="button"
+          className="px-4 py-2 bg-pink-800 text-white rounded-full"
+        >
+          Purchase
+        </button>
+      </div>
     </div>
   );
 }

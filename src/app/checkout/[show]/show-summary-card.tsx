@@ -8,7 +8,7 @@ interface ShowSummaryCardProps {
 
 export default function ShowSummaryCard({ show }: ShowSummaryCardProps) {
   return (
-    <Card className="col-span-2 p-6 divide-y order-1">
+    <Card className="col-span-1 sm:col-span-2 p-6 divide-y order-1">
       <h1 className="text-xl font-extrabold text-slate-700">Show details</h1>
       <div className="mt-2 pt-2">
         <div className="text-lg font-bold">{show.musician}</div>
