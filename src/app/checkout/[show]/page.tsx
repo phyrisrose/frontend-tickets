@@ -20,7 +20,7 @@ export default function Checkout({ params }: CheckoutProps) {
       <div className="col-span-1 sm:col-span-3 order-4 flex justify-center sm:justify-end">
         <button
           type="button"
-          className="px-4 py-2 bg-pink-800 text-white rounded-full"
+          className="px-6 py-2 bg-pink-800 hover:bg-pink-700 shadow-md text-white rounded-full"
         >
           Purchase
         </button>
