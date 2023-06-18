@@ -11,7 +11,7 @@ export default function PaymentCard() {
         <div className="my-3">
           <input
             type="text"
-            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Cardholder name"
             maxLength={22}
           />
@@ -19,7 +19,7 @@ export default function PaymentCard() {
         <div className="my-3">
           <input
             type="text"
-            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+            className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Card number"
             maxLength={19}
           />
@@ -32,7 +32,7 @@ export default function PaymentCard() {
             <select
               name=""
               id=""
-              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
               <option value="" selected disabled>
                 MM
@@ -53,7 +53,7 @@ export default function PaymentCard() {
             <select
               name=""
               id=""
-              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
               <option value="" selected disabled>
                 YYYY
@@ -69,7 +69,7 @@ export default function PaymentCard() {
             </select>
             <input
               type="text"
-              className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+              className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
               placeholder="Security code"
               maxLength={3}
             />

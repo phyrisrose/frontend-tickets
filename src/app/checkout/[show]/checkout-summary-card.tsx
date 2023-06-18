@@ -33,33 +33,32 @@ export default function CheckoutSummaryCard({
     <Card className="col-span-1 row-span-2 p-4 divide-y order-3 sm:order-2 w-full">
       <h1 className="text-xl font-extrabold text-slate-700">Summary</h1>
       <div className="mt-2 pt-2">
-        <div>
-          Ticket price:{' '}
+        <div className="flex justify-between sm:block">
+          <span>Ticket price:</span>{' '}
           <span className="text-lg font-bold tracking-tighter">
             {formattedPrice}
           </span>
         </div>
         <label htmlFor="numTickets">Number of tickets: </label>
-        <select
-          value={numTickets}
-          name="numTickets"
-          onChange={handleSelect}
-          className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
-        >
-          <option disabled value="">
-            --Choose an option--
-          </option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7</option>
-          <option value={8}>8</option>
-          <option value={9}>9</option>
-          <option value={10}>10</option>
-        </select>
+        <div className="flex justify-end sm:block">
+          <select
+            value={numTickets}
+            name="numTickets"
+            onChange={handleSelect}
+            className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7</option>
+            <option value={8}>8</option>
+            <option value={9}>9</option>
+            <option value={10}>10</option>
+          </select>
+        </div>
         <div>
           Total:{' '}
           <span className="text-lg font-bold tracking-tighter">
