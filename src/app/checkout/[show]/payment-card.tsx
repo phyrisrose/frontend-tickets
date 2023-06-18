@@ -32,7 +32,7 @@ export default function PaymentCard() {
             <select
               name=""
               id=""
-              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             >
               <option value="" selected disabled>
                 MM
@@ -53,7 +53,7 @@ export default function PaymentCard() {
             <select
               name=""
               id=""
-              className="form-select appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+              className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
             >
               <option value="" selected disabled>
                 YYYY

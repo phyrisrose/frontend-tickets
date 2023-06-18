@@ -1,3 +1,7 @@
+'use client';
+
+import { useState, ChangeEvent } from 'react';
+
 import { Card } from '@/components';
 
 interface CheckoutSummaryCardProps {
@@ -12,12 +16,18 @@ interface CheckoutSummaryCardProps {
 export default function CheckoutSummaryCard({
   price,
 }: CheckoutSummaryCardProps) {
+  const [numTickets, setNumTickets] = useState<number>(2);
   const usdFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 
+  const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    setNumTickets(Number(e.target.value));
+  };
+
   const formattedPrice = usdFormatter.format(price);
+  const formattedTotal = usdFormatter.format(price * numTickets);
 
   return (
     <Card className="col-span-1 row-span-2 p-4 divide-y order-3 sm:order-2 w-full">
@@ -29,8 +39,33 @@ export default function CheckoutSummaryCard({
             {formattedPrice}
           </span>
         </div>
-        <div>Number of tickets</div>
-        <div>Total</div>
+        <label htmlFor="numTickets">Number of tickets: </label>
+        <select
+          value={numTickets}
+          name="numTickets"
+          onChange={handleSelect}
+          className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring focus:outline-none"
+        >
+          <option disabled value="">
+            --Choose an option--
+          </option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
+        </select>
+        <div>
+          Total:{' '}
+          <span className="text-lg font-bold tracking-tighter">
+            {formattedTotal}
+          </span>
+        </div>
       </div>
     </Card>
   );
