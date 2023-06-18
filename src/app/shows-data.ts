@@ -1,10 +1,11 @@
+import { addDays } from 'date-fns';
 import { Show } from './shows.types';
 
 export const shows: Show[] = [
   {
     id: 0,
     musician: 'Youth Lagoon',
-    date: new Date(2023, 5, 3),
+    date: addDays(new Date(), 10),
     location: 'Seattle, WA',
     venue: 'Neptune',
     price: 30,
@@ -13,7 +14,7 @@ export const shows: Show[] = [
   {
     id: 1,
     musician: 'Nero',
-    date: new Date(2023, 7, 6),
+    date: addDays(new Date(), 33),
     location: 'Seattle, WA',
     venue: 'Neumos',
     price: 50,
@@ -22,7 +23,7 @@ export const shows: Show[] = [
   {
     id: 2,
     musician: 'Tycho',
-    date: new Date(2023, 10, 14),
+    date: addDays(new Date(), 54),
     location: 'Seattle, WA',
     venue: 'The Showbox',
     price: 40,
@@ -31,7 +32,7 @@ export const shows: Show[] = [
   {
     id: 3,
     musician: 'Nym',
-    date: new Date(2023, 9, 10),
+    date: addDays(new Date(), 79),
     location: 'Seattle, WA',
     venue: 'Chop Suey',
     price: 40,
@@ -40,7 +41,7 @@ export const shows: Show[] = [
   {
     id: 3,
     musician: 'Manatee Commune',
-    date: new Date(2023, 12, 18),
+    date: addDays(new Date(), 90),
     location: 'Seattle, WA',
     venue: 'The Crocodile',
     price: 40,
