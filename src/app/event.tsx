@@ -22,7 +22,7 @@ export default function Event({ show }: EventProps) {
         <div>
           <div>{format(show.date, 'MMMM do, yyyy')}</div>
           <div>{show.musician}</div>
-          <div>{show.location}</div>
+          <div>{show.venue}</div>
         </div>
       </div>
       <div className="w-200 shrink-0">
