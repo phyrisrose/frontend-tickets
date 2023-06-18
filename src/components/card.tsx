@@ -27,7 +27,7 @@ export default function Card({
         'rounded-lg',
         'overflow-hidden',
         'shadow-md',
-        hoverEffect && hoverEffectClasses.join(' '),
+        hoverEffect ? hoverEffectClasses.join(' ') : '',
         group && `group/${group}`,
         className,
       ].join(' ')}
