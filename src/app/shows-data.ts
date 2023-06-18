@@ -39,7 +39,7 @@ export const shows: Show[] = [
     imageUrl: '/musicians/nym.jpeg',
   },
   {
-    id: 3,
+    id: 4,
     musician: 'Manatee Commune',
     date: addDays(new Date(), 90),
     location: 'Seattle, WA',
