@@ -34,10 +34,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### The data
 
-- The data is being pulled from designated data file, `shows-data.ts`
+- The data is being pulled from a designated data file, `shows-data.ts`
 
 ### Considerations / next steps
 
 - At the moment, this project is UI-heavy; it does not have the forms connected to data storage, and most interactions are not wired up. Moving forward, React Context API would be a suggested choice for storing the data (particularly on the checkout page)
-- Adding a way to select location. A way to implement it could be a list of locations as a landing page, and perhaps a modal that can pop up on the event list page
+- Adding a way to select location. A way to implement it could be a list of locations as a landing page, and perhaps a modal that can pop up on the event list page to edit the location
 - Adding a card on checkout page to enter the billing address
