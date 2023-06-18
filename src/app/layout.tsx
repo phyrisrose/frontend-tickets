@@ -17,9 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="antialiased text-gray-900 bg-gray-200 flex items-center justify-center">
-          <div className="min-h-screen p-8 max-w-2xl min-w-full">
-            {children}
-          </div>
+          <div className="min-h-screen p-8 max-w-3xl min-w-3xl">{children}</div>
         </div>
       </body>
     </html>

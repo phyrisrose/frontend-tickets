@@ -39,13 +39,13 @@ export default function CheckoutSummaryCard({
             {formattedPrice}
           </span>
         </div>
-        <label htmlFor="numTickets">Number of tickets: </label>
-        <div className="flex justify-end sm:block">
+        <div className="flex justify-between items-baseline sm:block">
+          <label htmlFor="numTickets">Number of tickets: </label>
           <select
             value={numTickets}
             name="numTickets"
             onChange={handleSelect}
-            className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
+            className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none text-right sm:text-left"
           >
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -59,7 +59,7 @@ export default function CheckoutSummaryCard({
             <option value={10}>10</option>
           </select>
         </div>
-        <div>
+        <div className="border-t pt-2 mt-2">
           Total:{' '}
           <span className="text-lg font-bold tracking-tighter">
             {formattedTotal}
