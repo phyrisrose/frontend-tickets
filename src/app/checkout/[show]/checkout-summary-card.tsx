@@ -25,9 +25,9 @@ export default function CheckoutSummaryCard({
   const formattedTotal = usdFormatter.format(price * numTickets);
 
   return (
-    <Card className="col-span-1 row-span-2 p-4 divide-y order-3 sm:order-2 w-full">
-      <div className="block sm:flex sm:flex-col justify-between content-between h-full">
-        <div>
+    <Card className="col-span-1 row-span-2 p-6 order-3 sm:order-2 w-full">
+      <div className="block sm:flex sm:flex-col justify-between content-between divide-y h-full">
+        <div className="divide-y">
           <h1 className="text-xl font-extrabold text-slate-700">Summary</h1>
           <div className="mt-2 pt-2">
             <div className="flex justify-between sm:block">
