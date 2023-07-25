@@ -25,6 +25,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It is built on `Next.js` 13 using App Router
 - It is primarily written with `TypeScript`
 - Linting is setup with `eslint` & `prettier` configs
+- [Lefthook](https://github.com/evilmartians/lefthook) is used as a pre-commit / pre-push hook. It runs formatting checks, and is ready to run tests once they are in place
 
 ### The UI
 

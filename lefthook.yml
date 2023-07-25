@@ -1,0 +1,25 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+#
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: npx prettier --write {staged_files} && npx eslint --fix {staged_files} && git add {staged_files}
+    prettify-non-code:
+      glob: '*.{md,css,json,yml}'
+      run: npx prettier --write {staged_files} && git add {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    type-check:
+      glob: '*.{ts,tsx}'
+      run: npm run typecheck
+    # test:
+    #   run: npm test

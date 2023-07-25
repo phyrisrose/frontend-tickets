@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
+    "lefthook": "^1.4.7",
     "prettier": "^2.8.8"
   }
 }
