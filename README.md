@@ -29,7 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### The UI
 
-- `Tailwind CSS` is used for styling. It's configured with `postcss`
+- `Tailwind CSS` is used for styling. It's configured with `postcss` & `autoprefixer`
 - Using [`Heroicons`](https://heroicons.com/) as the icon library
 - Any reusable components are built from scratch, and stored under `src/components`
 
