@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import { Card } from '@/components';
+
+import { useCheckoutContext } from '../checkout-context';
 
 interface CheckoutSummaryCardProps {
   price: number;
@@ -11,18 +13,21 @@ interface CheckoutSummaryCardProps {
 export default function CheckoutSummaryCard({
   price,
 }: CheckoutSummaryCardProps) {
-  const [numTickets, setNumTickets] = useState<number>(2);
+  const {
+    state: { numberOfTickets },
+    dispatch,
+  } = useCheckoutContext();
+
+  const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    dispatch({ type: 'setNumberOfTickets', payload: Number(e.target.value) });
+  };
+
   const usdFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
-
-  const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-    setNumTickets(Number(e.target.value));
-  };
-
   const formattedPrice = usdFormatter.format(price);
-  const formattedTotal = usdFormatter.format(price * numTickets);
+  const formattedTotal = usdFormatter.format(price * numberOfTickets);
 
   return (
     <Card className="col-span-1 row-span-2 p-6 order-3 sm:order-2 w-full">
@@ -37,12 +42,12 @@ export default function CheckoutSummaryCard({
               </span>
             </div>
             <div className="flex justify-between items-baseline sm:block">
-              <label htmlFor="numTickets" className="mr-4">
+              <label htmlFor="numberOfTickets" className="mr-4">
                 Number of tickets:{' '}
               </label>
               <select
-                value={numTickets}
-                name="numTickets"
+                value={numberOfTickets}
+                name="numberOfTickets"
                 onChange={handleSelect}
                 className="appearance-none block px-5 py-2 my-2 w-20 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none text-right sm:text-left"
               >
