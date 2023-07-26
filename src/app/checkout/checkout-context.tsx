@@ -9,8 +9,10 @@ import {
 
 import type { PaymentInfo } from './checkout.types';
 
-/** @todo handle other action types */
-type Action = { payload: number; type: 'setNumberOfTickets' };
+type NumberOfTicketsAction = { payload: number; type: 'setNumberOfTickets' };
+/** @todo it would be great if we could just sent a partial payment. Look into Pick */
+type UpdatePaymentAction = { payload: PaymentInfo; type: 'updatePayment' };
+type Action = NumberOfTicketsAction | UpdatePaymentAction;
 type Dispatch = (action: Action) => void;
 type State = { paymentInfo: PaymentInfo; numberOfTickets: number };
 
@@ -30,9 +32,18 @@ function checkoutReducer(state: State, action: Action) {
       return { ...state, numberOfTickets: action.payload };
     }
 
+    /**
+     * @todo need to figure out how specific payment info bit
+     * will be updated
+     * */
+    case 'updatePayment': {
+      return { ...state, paymentInfo: { ...state.paymentInfo } };
+    }
+
     /** @todo add actions for manipulating payment info */
 
     default: {
+      /** @ts-expect-error need to sort out why the union type isn't being honoured */
       throw new Error(`Unhandled action type: ${action.type}`);
     }
   }
