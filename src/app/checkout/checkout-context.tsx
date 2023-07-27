@@ -43,8 +43,7 @@ function checkoutReducer(state: State, action: Action) {
     /** @todo add actions for manipulating payment info */
 
     default: {
-      /** @ts-expect-error need to sort out why the union type isn't being honoured */
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error(`Unhandled action type: ${(action as Action).type}`);
     }
   }
 }
