@@ -1,9 +1,20 @@
+'use client';
+
+import { ChangeEvent } from 'react';
+
 import { Card } from '@/components';
+
+import { useCheckoutContext } from '../checkout-context';
 
 /**
  * @todo add state
  */
 export default function PaymentCard() {
+  const {
+    state: { paymentInfo },
+    dispatch,
+  } = useCheckoutContext();
+
   return (
     <Card className="col-span-1 sm:col-span-2 p-6 order-2 sm:order-3">
       <h1 className="text-xl font-extrabold text-slate-700">Payment</h1>
@@ -11,9 +22,17 @@ export default function PaymentCard() {
         <div className="my-3">
           <input
             type="text"
+            name="cardholderName"
+            value={paymentInfo.cardholderName}
             className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Cardholder name"
             maxLength={22}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              dispatch({
+                type: 'updatePayment',
+                payload: { cardholderName: e.target.value },
+              })
+            }
           />
         </div>
         <div className="my-3">

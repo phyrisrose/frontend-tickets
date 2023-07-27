@@ -10,14 +10,21 @@ import {
 import type { PaymentInfo } from './checkout.types';
 
 type NumberOfTicketsAction = { payload: number; type: 'setNumberOfTickets' };
-/** @todo it would be great if we could just sent a partial payment. Look into Pick */
-type UpdatePaymentAction = { payload: PaymentInfo; type: 'updatePayment' };
+type UpdatePaymentAction = {
+  payload: Partial<PaymentInfo>;
+  type: 'updatePayment';
+};
 type Action = NumberOfTicketsAction | UpdatePaymentAction;
 type Dispatch = (action: Action) => void;
 type State = { paymentInfo: PaymentInfo; numberOfTickets: number };
 
 const initialState = {
-  paymentInfo: {} as PaymentInfo,
+  paymentInfo: {
+    cardholderName: '',
+    cardNumber: '',
+    expirationDate: '' /** @todo convert to object */,
+    securityCode: null,
+  } as PaymentInfo,
   numberOfTickets: 2,
 };
 
@@ -32,12 +39,11 @@ function checkoutReducer(state: State, action: Action) {
       return { ...state, numberOfTickets: action.payload };
     }
 
-    /**
-     * @todo need to figure out how specific payment info bit
-     * will be updated
-     * */
     case 'updatePayment': {
-      return { ...state, paymentInfo: { ...state.paymentInfo } };
+      return {
+        ...state,
+        paymentInfo: { ...state.paymentInfo, ...action.payload },
+      };
     }
 
     /** @todo add actions for manipulating payment info */
