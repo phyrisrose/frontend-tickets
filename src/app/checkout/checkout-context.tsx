@@ -22,7 +22,7 @@ const initialState = {
   paymentInfo: {
     cardholderName: '',
     cardNumber: '',
-    expirationDate: '' /** @todo convert to object */,
+    expirationDate: { month: 'MM', year: 'YYYY' },
     securityCode: '',
   } as PaymentInfo,
   numberOfTickets: 2,
@@ -40,13 +40,12 @@ function checkoutReducer(state: State, action: Action) {
     }
 
     case 'updatePayment': {
+      console.log('acton.payload', action.payload);
       return {
         ...state,
         paymentInfo: { ...state.paymentInfo, ...action.payload },
       };
     }
-
-    /** @todo add actions for manipulating payment info */
 
     default: {
       throw new Error(`Unhandled action type: ${(action as Action).type}`);

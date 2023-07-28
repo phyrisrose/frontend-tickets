@@ -15,7 +15,10 @@ export default function PaymentCard() {
     dispatch,
   } = useCheckoutContext();
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+  /**
+   * @todo how to handle select's change that is an object in state?
+   */
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     dispatch({
       type: 'updatePayment',
       payload: { [e.target.name]: e.target.value },
@@ -53,11 +56,12 @@ export default function PaymentCard() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             <select
-              name=""
-              id=""
+              name="expirationDate.month"
+              value={paymentInfo.expirationDate.month}
+              onChange={handleChange}
               className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
-              <option value="" selected disabled>
+              <option value="MM" disabled>
                 MM
               </option>
               <option value="01">01</option>
@@ -74,11 +78,12 @@ export default function PaymentCard() {
               <option value="12">12</option>
             </select>
             <select
-              name=""
-              id=""
+              name="expirationDate.year"
+              value={paymentInfo.expirationDate.year}
+              onChange={handleChange}
               className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
-              <option value="" selected disabled>
+              <option value="YYYY" disabled>
                 YYYY
               </option>
               <option value="2023">2023</option>
