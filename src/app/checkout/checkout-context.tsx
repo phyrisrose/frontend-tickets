@@ -23,7 +23,7 @@ const initialState = {
     cardholderName: '',
     cardNumber: '',
     expirationDate: '' /** @todo convert to object */,
-    securityCode: null,
+    securityCode: '',
   } as PaymentInfo,
   numberOfTickets: 2,
 };

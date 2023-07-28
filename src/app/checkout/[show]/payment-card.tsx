@@ -15,6 +15,12 @@ export default function PaymentCard() {
     dispatch,
   } = useCheckoutContext();
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+    dispatch({
+      type: 'updatePayment',
+      payload: { [e.target.name]: e.target.value },
+    });
+
   return (
     <Card className="col-span-1 sm:col-span-2 p-6 order-2 sm:order-3">
       <h1 className="text-xl font-extrabold text-slate-700">Payment</h1>
@@ -27,20 +33,18 @@ export default function PaymentCard() {
             className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Cardholder name"
             maxLength={22}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              dispatch({
-                type: 'updatePayment',
-                payload: { cardholderName: e.target.value },
-              })
-            }
+            onChange={handleChange}
           />
         </div>
         <div className="my-3">
           <input
             type="text"
+            name="cardNumber"
+            value={paymentInfo.cardNumber}
             className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Card number"
             maxLength={19}
+            onChange={handleChange}
           />
         </div>
         <div className="my-3 flex flex-col">
@@ -88,9 +92,12 @@ export default function PaymentCard() {
             </select>
             <input
               type="text"
+              name="securityCode"
+              value={paymentInfo.securityCode}
               className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
               placeholder="Security code"
-              maxLength={3}
+              maxLength={4}
+              onChange={handleChange}
             />
           </div>
         </div>
