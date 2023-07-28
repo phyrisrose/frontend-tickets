@@ -7,7 +7,9 @@ import { Card } from '@/components';
 import { useCheckoutContext } from '../checkout-context';
 
 /**
- * @todo add state
+ * @todo What would validation be like, if
+ * we kept it as a collection of fields, detached from
+ * a form umbrella?
  */
 export default function PaymentCard() {
   const {
