@@ -1,6 +1,7 @@
 export type PaymentInfo = {
-  nameOnCard: string;
+  cardholderName: string;
   cardNumber: string;
-  expirationDate: string /** @todo this might need to be an object: month + year */;
-  securityCode: number;
+  expirationMonth: number | 'MM';
+  expirationYear: number | 'YYYY';
+  securityCode: string;
 };

@@ -1,9 +1,28 @@
+'use client';
+
+import { ChangeEvent } from 'react';
+
 import { Card } from '@/components';
 
+import { useCheckoutContext } from '../checkout.context';
+
 /**
- * @todo add state
+ * @todo What would validation be like, if
+ * we kept it as a collection of fields, detached from
+ * a form umbrella?
  */
 export default function PaymentCard() {
+  const {
+    state: { paymentInfo },
+    dispatch,
+  } = useCheckoutContext();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    dispatch({
+      type: 'updatePayment',
+      payload: { [e.target.name]: e.target.value },
+    });
+
   return (
     <Card className="col-span-1 sm:col-span-2 p-6 order-2 sm:order-3">
       <h1 className="text-xl font-extrabold text-slate-700">Payment</h1>
@@ -11,17 +30,23 @@ export default function PaymentCard() {
         <div className="my-3">
           <input
             type="text"
+            name="cardholderName"
+            value={paymentInfo.cardholderName}
             className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Cardholder name"
             maxLength={22}
+            onChange={handleChange}
           />
         </div>
         <div className="my-3">
           <input
             type="text"
+            name="cardNumber"
+            value={paymentInfo.cardNumber}
             className="block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             placeholder="Card number"
             maxLength={19}
+            onChange={handleChange}
           />
         </div>
         <div className="my-3 flex flex-col">
@@ -30,11 +55,12 @@ export default function PaymentCard() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             <select
-              name=""
-              id=""
+              name="expirationMonth"
+              value={paymentInfo.expirationMonth}
+              onChange={handleChange}
               className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
-              <option value="" selected disabled>
+              <option value="MM" disabled>
                 MM
               </option>
               <option value="01">01</option>
@@ -51,11 +77,12 @@ export default function PaymentCard() {
               <option value="12">12</option>
             </select>
             <select
-              name=""
-              id=""
+              name="expirationYear"
+              value={paymentInfo.expirationYear}
+              onChange={handleChange}
               className="appearance-none block w-full px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
             >
-              <option value="" selected disabled>
+              <option value="YYYY" disabled>
                 YYYY
               </option>
               <option value="2023">2023</option>
@@ -69,9 +96,12 @@ export default function PaymentCard() {
             </select>
             <input
               type="text"
+              name="securityCode"
+              value={paymentInfo.securityCode}
               className="block w-full col-span-2 px-5 py-2 border rounded-lg bg-white shadow placeholder-slate-400 text-slate-700 focus:ring-primary-400 focus:outline-none"
               placeholder="Security code"
-              maxLength={3}
+              maxLength={4}
+              onChange={handleChange}
             />
           </div>
         </div>

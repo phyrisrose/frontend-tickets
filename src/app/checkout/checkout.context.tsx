@@ -7,36 +7,16 @@ import {
   useContext,
 } from 'react';
 
-import type { PaymentInfo } from './checkout.types';
-
-/** @todo handle other action types */
-type Action = { payload: number; type: 'setNumberOfTickets' };
-type Dispatch = (action: Action) => void;
-type State = { paymentInfo: PaymentInfo; numberOfTickets: number };
-
-const initialState = {
-  paymentInfo: {} as PaymentInfo,
-  numberOfTickets: 2,
-};
+import {
+  type Dispatch,
+  type State,
+  initialState,
+  checkoutReducer,
+} from './checkout.state';
 
 const CheckoutStateContext = createContext<
   { dispatch: Dispatch; state: State } | undefined
 >(undefined);
-
-/** @todo take the reducer out into a different file */
-function checkoutReducer(state: State, action: Action) {
-  switch (action.type) {
-    case 'setNumberOfTickets': {
-      return { ...state, numberOfTickets: action.payload };
-    }
-
-    /** @todo add actions for manipulating payment info */
-
-    default: {
-      throw new Error(`Unhandled action type: ${action.type}`);
-    }
-  }
-}
 
 function useCheckoutContext() {
   const context = useContext(CheckoutStateContext);
