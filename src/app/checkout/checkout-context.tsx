@@ -22,7 +22,8 @@ const initialState = {
   paymentInfo: {
     cardholderName: '',
     cardNumber: '',
-    expirationDate: { month: 'MM', year: 'YYYY' },
+    expirationMonth: 'MM',
+    expirationYear: 'YYYY',
     securityCode: '',
   } as PaymentInfo,
   numberOfTickets: 2,
@@ -40,7 +41,6 @@ function checkoutReducer(state: State, action: Action) {
     }
 
     case 'updatePayment': {
-      console.log('acton.payload', action.payload);
       return {
         ...state,
         paymentInfo: { ...state.paymentInfo, ...action.payload },
