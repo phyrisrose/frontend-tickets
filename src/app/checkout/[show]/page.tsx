@@ -3,6 +3,7 @@ import { shows } from '@/app/shows-data';
 import PaymentCard from './payment-card';
 import CheckoutSummaryCard from './checkout-summary-card';
 import ShowSummaryCard from './show-summary-card';
+import PurchaseButton from './purchase-button';
 
 interface CheckoutProps {
   params: {
@@ -23,12 +24,7 @@ export default function Checkout({ params }: CheckoutProps) {
       <CheckoutSummaryCard price={show.price} />
       <PaymentCard />
       <div className="col-span-1 sm:col-span-3 order-4 flex justify-center sm:justify-end">
-        <button
-          type="button"
-          className="px-6 py-2 bg-primary-800 hover:bg-primary-700 shadow-md text-white rounded-full"
-        >
-          Purchase
-        </button>
+        <PurchaseButton />
       </div>
     </div>
   );
