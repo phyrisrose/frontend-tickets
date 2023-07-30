@@ -10,6 +10,7 @@ interface CheckoutProps {
   };
 }
 
+/** @todo make a fake API call when Purchase button is clicked */
 export default function Checkout({ params }: CheckoutProps) {
   const show = shows[params.show];
   if (!show) {
