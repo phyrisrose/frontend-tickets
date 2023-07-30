@@ -1,5 +1,5 @@
 export type PaymentInfo = {
-  cardholderName: string /** @todo should these be nullable? */;
+  cardholderName: string;
   cardNumber: string;
   expirationMonth: number | 'MM';
   expirationYear: number | 'YYYY';
