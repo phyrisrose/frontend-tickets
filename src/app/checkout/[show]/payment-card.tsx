@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 
 import { Card } from '@/components';
 
-import { useCheckoutContext } from '../checkout-context';
+import { useCheckoutContext } from '../checkout.context';
 
 /**
  * @todo What would validation be like, if
